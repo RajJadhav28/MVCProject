@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+<%
+String msg=(String)request.getAttribute("msg");
+
+
+%>
+<h3><%=msg %></h3>
+
 <h3>I am on index page</h3>
 <a href="Register.jsp">Register here</a><br>
 <a href="Login.jsp">Login here</a>
