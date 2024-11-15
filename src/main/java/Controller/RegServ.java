@@ -28,7 +28,7 @@ public class RegServ extends HttpServlet {
 	private String loc;
 	private String contact;
 	Registration r=null;
-	DButility db=null;
+	
 	DaoImplement dimpl=new DaoImplement();
 	boolean flag;
 	String msg,errmsg;
