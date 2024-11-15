@@ -54,58 +54,58 @@ public class LoginServ extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		 emailId=request.getParameter("emailId");
 		 password=request.getParameter("password");
-		 session =request.getSession();
-		 flag=Logiimpl.UserLogin(emailId, password);
-		 flag=Logiimpl.adminLogin1(adminemailId, adminpassword);
-		 String username=request.getParameter("emailId");
-		 String password1=request.getParameter("password");
-		 String adminusername=request.getParameter("adminemailId");
-		 String adminpassword1=request.getParameter("adminpassword");
 		 
-		 
-				 
-//		 if(flag) {
-//			
-//			 msg="LoginSuccessfull";
-//			 request.setAttribute("msg", msg);
-//			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
-//				rd.forward(request, response);
-//			 
-//		 }else {
-//		
-//		 flag=Logiimpl.adminLogin(emailId, password);
-//		 if(flag) {
-//			 msg="LoginSuccessfull";
-//			 request.setAttribute("msg", msg);
-//			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
-//				rd.forward(request, response);
-//			 
-//		 }else {
-//			 errmsg="Not added";
-//				request.setAttribute("errmsg", errmsg);
-//				RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
-//				rd.forward(request, response);
-//		 }
-//		 }
-	
-		 
-		 if(username.equals(emailId)&&password1.equals(password)) {
+		 		 
+		 if(flag) {
+			
 			 msg="LoginSuccessfull";
 			 request.setAttribute("msg", msg);
 			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
-			 rd.forward(request, response);
+				rd.forward(request, response);
 			 
-		 }else if(adminusername.equals(adminemailId)&&adminpassword1.equals(adminpassword)){
+		 }else {
+		
+		 flag=Logiimpl.adminLogin(emailId, password);
+		 if(flag) {
 			 msg="LoginSuccessfull";
 			 request.setAttribute("msg", msg);
 			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
-			 rd.forward(request, response);
+				rd.forward(request, response);
+			 
 		 }else {
 			 errmsg="Not added";
 				request.setAttribute("errmsg", errmsg);
 				RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
 				rd.forward(request, response);
 		 }
+		 }
+		 
+//		 Method2
+//		 flag=Logiimpl.UserLogin(emailId, password);
+//		 flag=Logiimpl.adminLogin1(adminemailId, adminpassword);
+//		 String username=request.getParameter("emailId");
+//		 String password1=request.getParameter("password");
+//		 String adminusername=request.getParameter("adminemailId");
+//		 String adminpassword1=request.getParameter("adminpassword");
+	
+		 
+//		 if(username.equals(emailId)&&password1.equals(password)) {
+//			 msg="LoginSuccessfull";
+//			 request.setAttribute("msg", msg);
+//			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
+//			 rd.forward(request, response);
+//			 
+//		 }else if(adminusername.equals(adminemailId)&&adminpassword1.equals(adminpassword)){
+//			 msg="LoginSuccessfull";
+//			 request.setAttribute("msg", msg);
+//			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
+//			 rd.forward(request, response);
+//		 }else {
+//			 errmsg="Not added";
+//				request.setAttribute("errmsg", errmsg);
+//				RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
+//				rd.forward(request, response);
+//		 }
 	}
 
 }
