@@ -15,7 +15,7 @@ public class LoginDaoImpl implements LoginDao{
 		 Connection con=  DButility.getConnection();
 		 
 		 try {
-			 String sql="select * from userlogin where emailId=?";
+			 String sql="select * from register where emailId=?";
 			PreparedStatement ps=con.prepareStatement(sql);
 			ps.setString(1, emailId);
 			ResultSet rs=ps.executeQuery();

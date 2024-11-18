@@ -17,7 +17,7 @@ public class DaoImplement implements RegisterDao{
 		Connection con=DButility.getConnection();
 		
 		try {
-			String sql="insert into Register(name,emailId,password,loc,contact) values(?,?,?,?,?)";
+			String sql="insert into register(name,emailId,password,loc,contact) values(?,?,?,?,?)";
 			PreparedStatement ps=con.prepareStatement(sql);
 			ps.setString(1, r.getName());
 			ps.setString(2, r.getEmailId());

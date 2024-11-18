@@ -55,7 +55,7 @@ public class LoginServ extends HttpServlet {
 		 emailId=request.getParameter("emailId");
 		 password=request.getParameter("password");
 		 
-		 		 
+		 		 flag=Logiimpl.UserLogin(emailId, password);
 		 if(flag) {
 			
 			 msg="LoginSuccessfull";
@@ -67,7 +67,7 @@ public class LoginServ extends HttpServlet {
 		
 		 flag=Logiimpl.adminLogin(emailId, password);
 		 if(flag) {
-			 msg="LoginSuccessfull";
+			 msg="Admin LoginSuccessfull";
 			 request.setAttribute("msg", msg);
 			 RequestDispatcher rd=request.getRequestDispatcher("NewFile.jsp");
 				rd.forward(request, response);
